@@ -4,25 +4,47 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'gray.50',
-        color: 'gray.800',
+        bg: 'white',
+        color: 'gray.900',
       },
     },
   },
   colors: {
     brand: {
-      50: '#E6FFFA',
-      100: '#B2F5EA',
-      200: '#81E6D9',
-      300: '#4FD1C5',
-      400: '#38B2AC',
-      500: '#319795',
-      600: '#2C7A7B',
-      700: '#285E61',
-      800: '#234E52',
-      900: '#1D4044',
+      // Vibrant blue gradient colors
+      primary: '#4A3AFF',
+      secondary: '#2B89FF',
+      accent: '#84A9FF',
+      // Background gradients
+      gradient: {
+        start: '#4A3AFF',
+        end: '#2B89FF',
+      },
     },
   },
-});
+  fonts: {
+    heading: "'Inter', sans-serif",
+    body: "'Inter', sans-serif",
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: 'medium',
+        borderRadius: 'xl',
+      },
+      variants: {
+        gradient: {
+          bg: 'linear-gradient(135deg, #4A3AFF 0%, #2B89FF 100%)',
+          color: 'white',
+          _hover: {
+            transform: 'translateY(-2px)',
+            boxShadow: 'lg',
+          },
+          transition: 'all 0.2s',
+        },
+      },
+    },
+  },
+})
 
 export default theme;
